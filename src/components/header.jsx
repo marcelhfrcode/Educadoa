@@ -13,17 +13,30 @@ function Header() {
 
         <ul className="hidden md:flex gap-6 lg:gap-10 text-base lg:text-2xl">
           <li>
-            <a href="#beneficios" className="">
+            <a
+              href="#beneficios"
+              className="opacity-75 transition-all duration-300 hover:opacity-100"
+            >
               Benefícios
             </a>
           </li>
 
           <li>
-            <a href="#possibilidades">Possibilidades</a>
+            <a
+              href="#possibilidades"
+              className="opacity-75 transition-all duration-300 hover:opacity-100"
+            >
+              Possibilidades
+            </a>
           </li>
 
           <li>
-            <a href="#diferenca">Diferença</a>
+            <a
+              href="#diferenca"
+              className="opacity-75 transition-all duration-300 hover:opacity-100"
+            >
+              Diferença
+            </a>
           </li>
         </ul>
 

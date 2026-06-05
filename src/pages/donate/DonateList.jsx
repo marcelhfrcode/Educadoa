@@ -23,7 +23,7 @@ function DonateList() {
   return (
     <section className="w-full flex flex-col items-center gap-12 fade-up px-4">
       <div className="text-center">
-        <h2 className="text-4xl font-bold">ONGs disponíveis</h2>
+        <h2 className="text-4xl font-bold font-potta">ONGs disponíveis</h2>
 
         <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
           Escolha uma instituição e entre em contato diretamente para descobrir
