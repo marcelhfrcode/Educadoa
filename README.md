@@ -6,6 +6,22 @@ O projeto foi criado com o objetivo de reduzir a distância entre doadores e ins
 
 ---
 
+## 🛠 Painel Administrativo
+
+Além da área pública destinada aos usuários e doadores, a plataforma possui uma área administrativa em desenvolvimento voltada para a gestão interna do sistema.
+
+O painel permite:
+
+- Visualização de métricas da plataforma
+- Gerenciamento de ONGs cadastradas
+- Controle de categorias
+- Administração de conteúdos em destaque
+- Centralização de ações administrativas
+
+> Para acessar utilize a rota: https://educadoa.vercel.app/admin
+
+---
+
 ## 📖 Sobre o projeto
 
 Muitas pessoas desejam contribuir com causas sociais, mas encontram dificuldades relacionadas à confiança, transparência e clareza das informações disponíveis nas plataformas de doação.
