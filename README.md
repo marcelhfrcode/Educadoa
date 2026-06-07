@@ -1,44 +1,62 @@
-# Educadoa
+# EducaDoa
 
-Uma plataforma criada para tornar a doação mais humana, transparente e acessível.
+Uma plataforma web desenvolvida para aproximar pessoas de causas sociais por meio de uma experiência de doação mais transparente, acessível e humanizada.
 
-A Educadoa nasceu da ideia de aproximar pessoas de causas reais, mostrando que doar não precisa ser algo distante, burocrático ou impessoal. O projeto busca transmitir confiança, leveza e clareza, permitindo que qualquer pessoa entenda para onde sua contribuição está indo e qual impacto ela pode gerar.
-
----
-
-## ✨ Objetivo
-
-Muitas pessoas querem ajudar, mas ainda sentem insegurança ao realizar doações pela internet.
-A proposta da Educadoa é criar uma experiência mais transparente e acolhedora, conectando usuários a ONGs e iniciativas sociais de forma simples, moderna e visual.
+O projeto foi criado com o objetivo de reduzir a distância entre doadores e instituições, oferecendo uma interface intuitiva, visualmente acolhedora e focada em transmitir confiança durante toda a jornada do usuário.
 
 ---
 
-## 🚀 Funcionalidades atuais
+## 📖 Sobre o projeto
 
-- Landing page moderna e responsiva
-- Sistema de avaliações dinâmicas
-- Navegação suave entre seções
-- Dashboard visual de metas de doação
-- Cards de ONGs e possibilidades de ajuda
-- Animações e microinterações
-- Estrutura inicial da página de doação
-- Navegação entre páginas com React Router
-- Interface adaptada para dispositivos móveis
+Muitas pessoas desejam contribuir com causas sociais, mas encontram dificuldades relacionadas à confiança, transparência e clareza das informações disponíveis nas plataformas de doação.
+
+O EducaDoa foi idealizado para enfrentar esse desafio, proporcionando uma experiência simples e acessível, onde usuários podem conhecer organizações, entender seu impacto e acompanhar informações relevantes antes de realizar uma contribuição.
+
+Além da experiência voltada ao público, o projeto também conta com uma área administrativa para gerenciamento de ONGs e categorias, permitindo a evolução da plataforma para um ambiente mais completo e escalável.
 
 ---
 
-## 🛠 Stack utilizada
+## ✨ Funcionalidades
+
+### Área Pública
+
+- Landing page responsiva
+- Apresentação de ONGs e causas sociais
+- Sistema de categorias
+- Cards dinâmicos de organizações
+- Página de doação
+- Dashboard visual de metas e impacto
+- Sistema de avaliações
+- Navegação entre páginas utilizando React Router
+- Interface otimizada para dispositivos móveis
+- Microinterações e animações para melhorar a experiência do usuário
+
+### Painel Administrativo
+
+- Dashboard administrativo
+- Indicadores de ONGs cadastradas
+- Indicadores de ONGs em destaque
+- Indicadores de categorias
+- Área de gerenciamento integrada ao dashboard
+- Cadastro de ONGs
+- Gerenciamento de ONGs
+- Gerenciamento de categorias
+- Interface administrativa responsiva
+- Componentização dos módulos de gestão
+
+---
+
+## 🛠 Tecnologias utilizadas
 
 ### Frontend
 
 - React
-- JavaScript
-- TailwindCSS
+- JavaScript (ES6+)
+- Tailwind CSS
 - React Router DOM
 
-### Ambiente e Ferramentas
+### Ferramentas
 
-- Node.js
 - Vite
 - Git
 - GitHub
@@ -46,103 +64,177 @@ A proposta da Educadoa é criar uma experiência mais transparente e acolhedora,
 
 ---
 
-## 🎨 Design e identidade visual
+## 🎨 Design e UX
 
-O projeto foi estruturado visualmente no Figma antes do desenvolvimento, buscando criar uma experiência mais humana, acolhedora e intuitiva.
+Todo o projeto foi planejado inicialmente no Figma, com foco em:
+
+- acessibilidade
+- usabilidade
+- confiança
+- clareza visual
+- experiência mobile-first
 
 ### Tipografia
 
-- DM Sans → utilizada para textos e leitura
-- Potta One → utilizada para títulos e identidade da marca
+- DM Sans — textos e leitura
+- Potta One — identidade visual e títulos
 
 ### Direção visual
 
-A interface utiliza:
+- Cores suaves e acolhedoras
+- Elementos arredondados
+- Contrastes pensados para legibilidade
+- Animações discretas
+- Layout responsivo
 
-- cores suaves
-- elementos arredondados
-- gradientes leves
-- animações sutis
-- foco em conforto visual e acessibilidade
+### Conceitos explorados
 
-### Paleta principal
-
-- Verde → esperança, crescimento e impacto social
-- Azul → confiança e transparência
-- Branco e tons claros → leveza e simplicidade
-
----
-
-## 🧠 Estruturação do projeto
-
-Além da experiência visual e usabilidade, um dos focos centrais do estudo durante o desenvolvimento foi a construção de confiança e percepção de segurança dentro da plataforma, buscando transmitir transparência, credibilidade e conforto ao usuário durante a navegação e possíveis interações de doação.
-
-A organização do projeto foi baseada na matriz CSD:
-
-- Certezas
-- Suposições
-- Dúvidas
-
-Essa estrutura ajudou a definir:
-
-- os objetivos da plataforma
-- as dores do usuário
-- os pontos de confiança
-- a experiência de navegação
-- a proposta visual da Educadoa
+- Design centrado no usuário
+- Construção de confiança digital
+- Transparência em processos de doação
+- Experiência emocional aplicada à interface
 
 ---
 
-## 📌 Status do projeto
+## 🏗 Arquitetura do Projeto
 
-🚧 Em desenvolvimento
+A aplicação foi organizada utilizando uma estrutura baseada em componentes reutilizáveis e separação de responsabilidades, facilitando manutenção, escalabilidade e futuras integrações com backend.
 
-Atualmente estou trabalhando:
+```bash
+src/
+│
+├── assets/
+│   └── Logos e imagens da aplicação
+│
+├── components/
+│   ├── button.jsx
+│   ├── DonateCard.jsx
+│   ├── header.jsx
+│   ├── headerAdm.jsx
+│   ├── headerOngs.jsx
+│   └── footer.jsx
+│
+├── data/
+│   ├── feedback.js
+│   └── ongs.js
+│
+├── pages/
+│   ├── home/
+│   ├── donate/
+│   └── admin/
+│       └── Dashboard/
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+```
 
-- na experiência da página de doação
-- no fluxo de contribuição
-- em melhorias de UX e acessibilidade
-- na expansão das funcionalidades da plataforma
-- mais relações sobre quantidades doadas e doadores
+### Organização adotada
+
+- **assets**: arquivos estáticos, imagens e recursos visuais.
+- **components**: componentes reutilizáveis utilizados em diferentes partes da aplicação.
+- **data**: dados simulados utilizados durante o desenvolvimento.
+- **pages**: páginas da aplicação separadas por domínio de negócio.
+- **admin**: área administrativa para gerenciamento interno da plataforma.
+- **Dashboard**: módulos administrativos responsáveis por cadastro e gerenciamento de entidades da plataforma.
+
+### Princípios utilizados
+
+- Componentização
+- Reutilização de código
+- Separação de responsabilidades
+- Estrutura modular
+- Responsividade
+- Escalabilidade para integração futura com API e banco de dados
+
+```
+
+```
+
+### Princípios adotados
+
+- Componentização
+- Reutilização de código
+- Separação de responsabilidades
+- Organização por domínio
+- Estrutura preparada para integração com backend
 
 ---
 
-## 💡 Aprendizados durante o projeto
+## 📱 Responsividade
 
-Esse projeto tem sido importante para aprofundar conhecimentos em:
+O projeto foi desenvolvido seguindo uma abordagem responsiva, garantindo boa experiência em:
 
-- componentização no React
-- responsividade
-- manipulação de estados
-- renderização dinâmica com ".map()"
+- Smartphones
+- Tablets
+- Notebooks
+- Monitores desktop
+
+---
+
+## 🚀 Aprendizados
+
+Durante o desenvolvimento deste projeto foram aprofundados conhecimentos em:
+
+- React
+- Componentização
+- Hooks (`useState`)
+- Renderização dinâmica com `.map()`
+- Gerenciamento de estados
 - React Router
-- organização de interfaces
-- experiência do usuário
-- estruturação de aplicações frontend
-- design de interfaces no Figma
-- construção de interfaces focadas em confiança e segurança do usuário
+- Responsividade
+- Tailwind CSS
+- Estruturação de dashboards
+- UX/UI Design
+- Prototipação no Figma
+- Organização de projetos Front-End
+- Boas práticas de desenvolvimento
 
 ---
 
-## 🌎 Deploy
+## 🔮 Próximas implementações
 
-educadoa.vercel.app
+- Integração com API
+- Backend em Node.js
+- Banco de dados
+- Sistema de autenticação
+- Upload de imagens
+- CRUD completo de ONGs
+- Sistema de doações integrado
+- Relatórios administrativos
+- Painel de métricas avançadas
+- Controle de usuários e permissões
 
 ---
 
 ## 📷 Preview
 
-![alt text](./public/Images/ReadmeImgs/ImgReadme.png)
-![alt text](./public/Images/ReadmeImgs/ImgReadme1.png)
-![alt text](./public/Images/ReadmeImgs/ImgReadme2.png)
-Reponsive:
+### Página Inicial
 
-![alt text](./public/Images/ReadmeImgs/ImgReadme3.png)
+![Home](./public/Images/ReadmeImgs/ImgReadme.png)
+
+### Dashboard e funcionalidades
+
+![Dashboard](./public/Images/ReadmeImgs/ImgReadme1.png)
+
+![Funcionalidades](./public/Images/ReadmeImgs/ImgReadme2.png)
+
+### Responsividade
+
+![Responsivo](./public/Images/ReadmeImgs/ImgReadme3.png)
 
 ---
 
-## 🤝 Observação
+## 🌐 Deploy
 
-Este projeto ainda está evoluindo.
+Acesse o projeto:
 
-A ideia é continuar expandindo a plataforma e transformá-la em uma experiência cada vez mais transparente, significativa e acessível para pessoas que desejam ajudar outras pessoas.
+https://educadoa.vercel.app
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por Marcel Henrique.
+
+Este projeto faz parte do meu processo de aprendizado e evolução como desenvolvedor Full-Stack, explorando boas práticas de desenvolvimento, arquitetura de aplicações React, experiência do usuário e construção de produtos digitais com impacto social.
