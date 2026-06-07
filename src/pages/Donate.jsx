@@ -1,4 +1,4 @@
-import HeaderAdm from "../components/headerAdm";
+import HeaderOngs from "../components/headerOngs";
 import DonateHero from "../pages/donate/DonateHero";
 import DonateList from "./donate/DonateList";
 import Footer from "../components/footer";
@@ -7,7 +7,7 @@ import HowDonate from "./donate/HowDonate";
 function Donate() {
   return (
     <>
-      <HeaderAdm />
+      <HeaderOngs />
       <DonateHero />
       <DonateList />
       <HowDonate />

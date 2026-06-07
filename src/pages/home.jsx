@@ -1,5 +1,4 @@
 import Header from "../components/header.jsx";
-//localhost:4000/
 import HeadLine from "./home/HeadLine.jsx";
 import InfoCard from "./home/InfoCard.jsx";
 import HomeImage from "./home/HomeImage.jsx";
