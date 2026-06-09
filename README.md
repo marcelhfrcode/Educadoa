@@ -18,7 +18,7 @@ O painel permite:
 - Administração de conteúdos em destaque
 - Centralização de ações administrativas
 
-> Para acessar utilize a rota: https://educadoa.vercel.app/admin
+> Para acessar utilize a rota: `https://educadoa.vercel.app/admin`
 
 ---
 
@@ -28,7 +28,7 @@ Muitas pessoas desejam contribuir com causas sociais, mas encontram dificuldades
 
 O EducaDoa foi idealizado para enfrentar esse desafio, proporcionando uma experiência simples e acessível, onde usuários podem conhecer organizações, entender seu impacto e acompanhar informações relevantes antes de realizar uma contribuição.
 
-Além da experiência voltada ao público, o projeto também conta com uma área administrativa para gerenciamento de ONGs e categorias, permitindo a evolução da plataforma para um ambiente mais completo e escalável.
+Além da experiência voltada ao público, o projeto também conta com uma área administrativa para gerenciamento das informações da plataforma, permitindo sua evolução para um ambiente mais completo e escalável.
 
 ---
 
@@ -53,12 +53,27 @@ Além da experiência voltada ao público, o projeto também conta com uma área
 - Indicadores de ONGs cadastradas
 - Indicadores de ONGs em destaque
 - Indicadores de categorias
+- Cadastro de novas ONGs
+- Formulário validado
+- Seleção dinâmica de categorias
+- Atualização automática das métricas
+- Estrutura preparada para CRUD completo
 - Área de gerenciamento integrada ao dashboard
-- Cadastro de ONGs
-- Gerenciamento de ONGs
-- Gerenciamento de categorias
 - Interface administrativa responsiva
-- Componentização dos módulos de gestão
+- Componentização dos módulos administrativos
+
+---
+
+## 🎯 Características do projeto
+
+- Mobile First
+- Interface humanizada
+- Componentização em React
+- Estrutura modular
+- Escalabilidade para integração futura com backend
+- Experiência centrada no usuário
+- Organização por responsabilidade
+- Arquitetura preparada para crescimento
 
 ---
 
@@ -114,7 +129,7 @@ Todo o projeto foi planejado inicialmente no Figma, com foco em:
 
 ## 🏗 Arquitetura do Projeto
 
-A aplicação foi organizada utilizando uma estrutura baseada em componentes reutilizáveis e separação de responsabilidades, facilitando manutenção, escalabilidade e futuras integrações com backend.
+A aplicação foi organizada utilizando componentes reutilizáveis e separação de responsabilidades, facilitando manutenção, escalabilidade e futuras integrações com backend.
 
 ```bash
 src/
@@ -123,12 +138,12 @@ src/
 │   └── Logos e imagens da aplicação
 │
 ├── components/
-│   ├── button.jsx
+│   ├── Button.jsx
 │   ├── DonateCard.jsx
-│   ├── header.jsx
-│   ├── headerAdm.jsx
-│   ├── headerOngs.jsx
-│   └── footer.jsx
+│   ├── Header.jsx
+│   ├── HeaderAdm.jsx
+│   ├── HeaderOngs.jsx
+│   └── Footer.jsx
 │
 ├── data/
 │   ├── feedback.js
@@ -139,6 +154,9 @@ src/
 │   ├── donate/
 │   └── admin/
 │       └── Dashboard/
+│           ├── CreateOngForm.jsx
+│           ├── EditOngs.jsx
+│           └── CategoriesForm.jsx
 │
 ├── App.jsx
 ├── main.jsx
@@ -147,33 +165,21 @@ src/
 
 ### Organização adotada
 
-- **assets**: arquivos estáticos, imagens e recursos visuais.
-- **components**: componentes reutilizáveis utilizados em diferentes partes da aplicação.
+- **assets**: recursos visuais e imagens.
+- **components**: componentes reutilizáveis.
 - **data**: dados simulados utilizados durante o desenvolvimento.
-- **pages**: páginas da aplicação separadas por domínio de negócio.
-- **admin**: área administrativa para gerenciamento interno da plataforma.
-- **Dashboard**: módulos administrativos responsáveis por cadastro e gerenciamento de entidades da plataforma.
+- **pages**: separação por domínio da aplicação.
+- **admin**: área administrativa da plataforma.
+- **Dashboard**: módulos responsáveis pelo gerenciamento interno.
 
 ### Princípios utilizados
 
 - Componentização
 - Reutilização de código
 - Separação de responsabilidades
-- Estrutura modular
-- Responsividade
-- Escalabilidade para integração futura com API e banco de dados
-
-```
-
-```
-
-### Princípios adotados
-
-- Componentização
-- Reutilização de código
-- Separação de responsabilidades
 - Organização por domínio
-- Estrutura preparada para integração com backend
+- Estrutura modular
+- Escalabilidade para integração futura com API
 
 ---
 
@@ -195,8 +201,14 @@ Durante o desenvolvimento deste projeto foram aprofundados conhecimentos em:
 - React
 - Componentização
 - Hooks (`useState`)
+- Props e comunicação entre componentes
 - Renderização dinâmica com `.map()`
+- Manipulação de formulários
+- Validação de dados
 - Gerenciamento de estados
+- Imutabilidade em React
+- Arrays com `.filter()`, `.flatMap()` e `.map()`
+- Estruturas utilizando `Set`
 - React Router
 - Responsividade
 - Tailwind CSS
@@ -211,12 +223,14 @@ Durante o desenvolvimento deste projeto foram aprofundados conhecimentos em:
 ## 🔮 Próximas implementações
 
 - Integração com API
-- Backend em Node.js
-- Banco de dados
+- Backend em Node.js / NestJS
+- Banco de dados PostgreSQL
 - Sistema de autenticação
 - Upload de imagens
-- CRUD completo de ONGs
-- Sistema de doações integrado
+- Edição de ONGs
+- Exclusão de ONGs
+- CRUD completo conectado ao backend
+- Sistema de destaque de ONGs
 - Relatórios administrativos
 - Painel de métricas avançadas
 - Controle de usuários e permissões
@@ -229,9 +243,11 @@ Durante o desenvolvimento deste projeto foram aprofundados conhecimentos em:
 
 ![Home](./public/Images/ReadmeImgs/ImgReadme.png)
 
-### Dashboard e funcionalidades
+### Dashboard Administrativo
 
 ![Dashboard](./public/Images/ReadmeImgs/ImgReadme1.png)
+
+### Funcionalidades
 
 ![Funcionalidades](./public/Images/ReadmeImgs/ImgReadme2.png)
 
@@ -245,12 +261,18 @@ Durante o desenvolvimento deste projeto foram aprofundados conhecimentos em:
 
 Acesse o projeto:
 
-https://educadoa.vercel.app
+**https://educadoa.vercel.app**
+
+Área administrativa:
+
+**https://educadoa.vercel.app/admin**
 
 ---
 
 ## 👨‍💻 Autor
 
-Desenvolvido por Marcel Henrique.
+Desenvolvido por **Marcel Henrique**.
 
-Este projeto faz parte do meu processo de aprendizado e evolução como desenvolvedor Full-Stack, explorando boas práticas de desenvolvimento, arquitetura de aplicações React, experiência do usuário e construção de produtos digitais com impacto social.
+Este projeto faz parte da minha evolução como desenvolvedor Full Stack, explorando arquitetura de aplicações React, componentização, experiência do usuário e construção de produtos digitais com impacto social.
+
+O EducaDoa continua em desenvolvimento e novas funcionalidades serão adicionadas conforme a evolução da plataforma.
