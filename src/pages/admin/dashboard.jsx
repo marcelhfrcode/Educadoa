@@ -1,13 +1,26 @@
-import { ongs } from "../../data/ongs";
+import { ongs as initialOngs } from "../../data/ongs";
 import { useState } from "react";
 import CreateOngForm from "./Dashboard/CreateOngForm";
 import EditOngs from "./Dashboard/EditOngs";
 import CategoriesForm from "./Dashboard/CategoriesForm";
 
 function Dashboard() {
-  const ongsLength = ongs.length;
-  const ongsFeatured = ongs.filter((ong) => ong.featured);
-  const categories = new Set(ongs.flatMap((ong) => ong.category)).size;
+  const [ongsData, setOngsData] = useState(initialOngs);
+  const ongsLength = ongsData.length;
+  const ongsFeatured = ongsData.filter((ong) => ong.featured);
+  const categoriesLength = new Set(ongsData.flatMap((ong) => ong.category))
+    .size;
+  const categories = [...new Set(ongsData.flatMap((ong) => ong.category))];
+
+  const handleCreateOng = (newOng) => {
+    setOngsData((prev) => [
+      ...prev,
+      {
+        ...newOng,
+        id: Date.now(),
+      },
+    ]);
+  };
 
   const [activeForm, setActiveForm] = useState(null);
 
@@ -47,7 +60,7 @@ function Dashboard() {
             </h3>
 
             <p className="text-4xl text-green font-bold mt-2 text-center">
-              {categories}
+              {categoriesLength}
             </p>
           </div>
         </div>
@@ -103,7 +116,12 @@ function Dashboard() {
               activeForm ? "max-h-[1000px] mt-6" : "max-h-0"
             }`}
           >
-            {activeForm === "create" && <CreateOngForm />}
+            {activeForm === "create" && (
+              <CreateOngForm
+                onCreate={handleCreateOng}
+                categories={categories}
+              />
+            )}
             {activeForm === "manage" && <EditOngs />}
             {activeForm === "categories" && <CategoriesForm />}
           </div>
