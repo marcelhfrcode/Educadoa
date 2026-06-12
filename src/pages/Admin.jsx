@@ -1,6 +1,6 @@
 import { useState } from "react";
 import HeaderAdm from "../components/headerAdm";
-import Dashboard from "./admin/dashboard";
+import Dashboard from "./admin/dashboardpage";
 
 function AdminPage() {
   const [tab, setTab] = useState("dashboard");
