@@ -1,10 +1,14 @@
-import { useState } from "react";
-import { ongs as initialOngs } from "../../../data/ongs";
-
-function FeaturedOngs() {
-  const [ongsData] = useState(initialOngs);
-
+function FeaturedOngs({ ongsData, setOngsData }) {
   const ongsFeatured = ongsData.filter((ong) => ong.featured);
+
+  const handleDeleteOng = (id) => {
+    setOngsData((prevOngs) =>
+      prevOngs.map((ong) =>
+        ong.id === id ? { ...ong, featured: false } : ong,
+      ),
+    );
+  };
+
   return (
     <div className="bg-white rounded-2xl shadow-sm p-6 mt-15">
       <h2 className="text-3xl font-semibold p-6 font-dm text-center">
@@ -37,11 +41,10 @@ function FeaturedOngs() {
               </div>
 
               <div className="flex gap-2">
-                <button className="px-4 py-2 rounded-lg bg-green text-white hover:opacity-90 transition">
-                  Editar
-                </button>
-
-                <button className="px-4 py-2 rounded-lg border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition">
+                <button
+                  onClick={() => handleDeleteOng(ong.id)}
+                  className="px-4 py-2 rounded-lg border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition"
+                >
                   Remover destaque
                 </button>
               </div>

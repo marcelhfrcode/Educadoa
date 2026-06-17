@@ -1,11 +1,9 @@
-import CreateOngForm from "./CreateOngForm";
-import EditOngs from "./EditOngs";
-import CategoriesForm from "./CategoriesForm";
-import { ongs as initialOngs } from "../../../data/ongs";
+import CreateOngForm from "./FastActions/CreateOngForm";
+import EditOngs from "./FastActions/EditOngs";
+import CategoriesForm from "./FastActions/CategoriesForm";
 import { useState } from "react";
 
-function FastActions() {
-  const [ongsData, setOngsData] = useState(initialOngs);
+function FastActions({ ongsData, setOngsData }) {
   const [activeForm, setActiveForm] = useState(null);
 
   const categories = [...new Set(ongsData.flatMap((ong) => ong.category))];
@@ -76,8 +74,12 @@ function FastActions() {
           {activeForm === "create" && (
             <CreateOngForm onCreate={handleCreateOng} categories={categories} />
           )}
-          {activeForm === "manage" && <EditOngs />}
-          {activeForm === "categories" && <CategoriesForm />}
+          {activeForm === "manage" && (
+            <EditOngs ongsData={ongsData} setOngsData={setOngsData} />
+          )}
+          {activeForm === "categories" && (
+            <CategoriesForm categories={categories} />
+          )}
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/logo.svg";
 
 function HeaderAdm({ tab, setTab }) {
+  tab;
   return (
     <header className="bg-white shadow-md">
       <div className="flex items-center justify-between w-full px-4 sm:px-6 md:px-10 py-4 font-dm">
@@ -22,18 +23,6 @@ function HeaderAdm({ tab, setTab }) {
             </li>
             <li
               className="cursor-pointer opacity-75 transition-all duration-300 hover:opacity-100"
-              onClick={() => setTab("ongs")}
-            >
-              ONGs
-            </li>
-            <li
-              className="cursor-pointer opacity-75 transition-all duration-300 hover:opacity-100"
-              onClick={() => setTab("doacoes")}
-            >
-              Doações
-            </li>
-            <li
-              className="cursor-pointer opacity-75 transition-all duration-300 hover:opacity-100"
               onClick={() => setTab("usuarios")}
             >
               Usuários
@@ -43,7 +32,7 @@ function HeaderAdm({ tab, setTab }) {
 
         <Link
           to="/"
-          className="px-4 py-2 rounded-xl border border-red-500 bg-red-500 text-white hover:text-red-500 hover:bg-white hover:text-red transition-all duration-300"
+          className="w-28 sm:w-28 md:w-38 text-center px-4 py-2 rounded-xl border border-red-500 bg-red-500 text-white hover:font-bold hover:text-red transition-all duration-300"
         >
           Sair
         </Link>

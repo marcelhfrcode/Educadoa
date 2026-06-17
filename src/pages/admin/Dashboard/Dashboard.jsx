@@ -1,8 +1,4 @@
-import { ongs } from "../../../data/ongs";
-
-function Dashboard() {
-  const ongsData = ongs;
-
+function Dashboard({ ongsData }) {
   const ongsLength = ongsData.length;
   const ongsFeatured = ongsData.filter((ong) => ong.featured);
   const categoriesLength = new Set(ongsData.flatMap((ong) => ong.category))
