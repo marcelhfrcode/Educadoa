@@ -2,6 +2,13 @@ function EditOngs({ ongsData, setOngsData }) {
   const handleDeleteOng = (id) => {
     setOngsData((prevOngs) => prevOngs.filter((ong) => ong.id !== id));
   };
+  const handleFeaturedOng = (id) => {
+    setOngsData((prevOngs) =>
+      prevOngs.map((ong) =>
+        ong.id === id ? { ...ong, featured: !ong.featured } : ong,
+      ),
+    );
+  };
 
   return (
     <div className="bg-[#F8F8F2] rounded-3xl p-8 mt-10 border border-gray-100">
@@ -17,12 +24,24 @@ function EditOngs({ ongsData, setOngsData }) {
               <p className="text-gray-600">{ong.description}</p>
             </div>
 
-            <button
-              className=" bg-red-500 hover:bg-red-700 text-white font-bold py-2 mt-2 px-4 rounded"
-              onClick={() => handleDeleteOng(ong.id)}
-            >
-              Excluir
-            </button>
+            <div className="flex gap-5">
+              <button
+                className=" bg-red-500 hover:bg-red-700 text-white font-bold py-2 mt-2 px-4 rounded transition-all duration-300 hover:scale-103"
+                onClick={() => handleDeleteOng(ong.id)}
+              >
+                Excluir
+              </button>
+              <button
+                className={`text-white font-bold py-2 mt-2 px-4 rounded transition-all duration-300 hover:scale-103 ${
+                  ong.featured
+                    ? "bg-green hover:bg-bgreen"
+                    : "bg-bgreen hover:bg-green"
+                }`}
+                onClick={() => handleFeaturedOng(ong.id)}
+              >
+                {ong.feature ? "Remover destaque" : "Destacar"}
+              </button>
+            </div>
           </div>
         ))}
       </div>
